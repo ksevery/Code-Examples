@@ -19,6 +19,7 @@ namespace DelegatesAndFuncs.Tests
             CollectionAssert.AreEquivalent(expectedOutput, numsLowerThan10);
         }
 
+        // Showing exception testing
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void TestNameEmptyShouldThrowException()
