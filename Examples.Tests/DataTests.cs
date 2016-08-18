@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Examples.Data.UnitOfWork;
 using Examples.Services;
 using Examples.Tests.Mocks;
+using Examples.Data.Models;
 
 namespace Examples.Tests
 {
@@ -35,6 +36,13 @@ namespace Examples.Tests
             var result = this.controller.GetExampleByName("pesho");
 
             Assert.AreEqual("pesho", result.Name);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestExampleNameIfEmptyShouldThrow()
+        {
+            var example = new Example() { Name = string.Empty };
         }
     }
 }

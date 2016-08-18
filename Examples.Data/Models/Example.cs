@@ -9,10 +9,29 @@ namespace Examples.Data.Models
 {
     public class Example
     {
+        private string _name;
+
         [Key]
         public int Id { get; set; }
 
-        public string Name { get; set; }
+        [Required]
+        [MinLength(2)]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value) || value.Length < 2)
+                {
+                    throw new ArgumentException();
+                }
+
+                this._name = value;
+            }
+        }
 
         public string Description { get; set; }
     }
