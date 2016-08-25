@@ -30,6 +30,28 @@ namespace Examples.Converting
             {
                 Console.WriteLine("Not a number!");
             }
+
+            object obj = new ExampleClass { Name = "lucho" };
+
+            var exampleObj = obj as ExampleClass;
+
+            if (exampleObj != null)
+            {
+                Console.WriteLine("Conversion succesfull!");
+            }
+            else
+            {
+                Console.WriteLine("No conversion!");
+            }
+
+            if (obj.GetType().Name == typeof(ExampleClass).Name)
+            {
+                Console.WriteLine("It is example!!!");
+            }
+            else
+            {
+                Console.WriteLine("No example!");
+            }
         }
     }
 }
