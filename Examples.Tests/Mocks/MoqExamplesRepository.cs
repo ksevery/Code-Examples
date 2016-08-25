@@ -19,7 +19,8 @@ namespace Examples.Tests.Mocks
             mockedExamplesRepository.Setup(r => r.Examples.SearchFor(It.IsAny<Expression<Func<Example, bool>>>()))
                 .Returns(new List<Example>()
                 {
-                    new Example() { Name = "pesho"}
+                    new Example() { Id = 1, Name = "pesho"},
+                    new Example() { Id = 2, Name = "GOSHO" }
                 }.AsQueryable());
 
             this.ExamplesData = mockedExamplesRepository.Object;

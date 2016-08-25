@@ -39,6 +39,14 @@ namespace Examples.Tests
         }
 
         [TestMethod]
+        public void TestAmountByID()
+        {
+            var result = this.controller.GetExampleByID(1);
+            Assert.AreEqual(1, result.Id);
+            Assert.AreEqual("pesho", result.Name);
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void TestExampleNameIfEmptyShouldThrow()
         {

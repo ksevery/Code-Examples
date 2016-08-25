@@ -28,5 +28,9 @@ namespace Examples.Services
         {
             return this._data.Examples.SearchFor(e => e.Name == name).First();
         }
+        public Example GetExampleByID(int id)
+        {
+            return this._data.Examples.SearchFor(e => e.Id == id).First();
+        }
     }
 }
