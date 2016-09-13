@@ -8,6 +8,19 @@ namespace Examples.Converting
 {
     public class ExampleClass
     {
-        public string Name { get; set; }
+        private string name;
+        public DateTime instanceTime;
+
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+            set
+            {
+                this.name = value;
+            }
+        }
     }
 }
